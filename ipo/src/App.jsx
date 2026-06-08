@@ -41,21 +41,21 @@ function ClientesList() {
   return (
     <div>
       <div>
-        <h2 className="mb-0">Clientes
+        <h2>Clientes
           <div className="float-right">
-            <button className="btn btn-dark">
+            <button className="btn btn-dark mr-1">
               <i className="fa fa-plus"></i> Novo Cliente
             </button>
-            <button className="btn btn-outline-secondary">
+            <button className="btn btn-dark">
               <i className="fa fa-refresh"></i> Atualizar
             </button>
           </div>
         </h2>
       </div>
 
-      <div className="table-responsive">
-        <table className="table table-striped table-hover align-middle">
-          <thead className="table-light">
+      <div>
+        <table className="table table-striped">
+          <thead>
             <tr>
               <th>Código</th>
               <th>Nome</th>
@@ -71,13 +71,13 @@ function ClientesList() {
               <td>Lisboa</td>
               <td>123456789</td>
               <td>
-                <button className="btn btn-sm btn-outline-secondary mr-1">
+                <button className="btn btn-dark mr-1">
                   <i className="fa fa-eye"></i>
                 </button>
-                <button className="btn btn-sm btn-outline-primary mr-1">
-                  <i className="fa fa-edit"></i>
+                <button className="btn btn-dark mr-1">
+                  <i className="fa fa-pencil"></i>
                 </button>
-                <button className="btn btn-sm btn-outline-danger">
+                <button className="btn btn-dark mr-1">
                   <i className="fa fa-trash"></i>
                 </button>
               </td>
@@ -88,13 +88,13 @@ function ClientesList() {
               <td>Madeira</td>
               <td>987654321</td>
               <td>
-                <button className="btn btn-sm btn-outline-secondary mr-1">
+                <button className="btn btn-dark mr-1">
                   <i className="fa fa-eye"></i>
                 </button>
-                <button className="btn btn-sm btn-outline-primary mr-1">
-                  <i className="fa fa-edit"></i>
+                <button className="btn btn-dark mr-1">
+                  <i className="fa fa-pencil"></i>
                 </button>
-                <button className="btn btn-sm btn-outline-danger">
+                <button className="btn btn-dark mr-1">
                   <i className="fa fa-trash"></i>
                 </button>
               </td>
@@ -105,13 +105,13 @@ function ClientesList() {
               <td>Leiria</td>
               <td>456789123</td>
               <td>
-                <button className="btn btn-sm btn-outline-secondary mr-1">
+                <button className="btn btn-dark mr-1">
                   <i className="fa fa-eye"></i>
                 </button>
-                <button className="btn btn-sm btn-outline-primary mr-1">
-                  <i className="fa fa-edit"></i>
+                <button className="btn btn-dark mr-1">
+                  <i className="fa fa-pencil"></i>
                 </button>
-                <button className="btn btn-sm btn-outline-danger">
+                <button className="btn btn-dark mr-1">
                   <i className="fa fa-trash"></i>
                 </button>
               </td>
