@@ -38,9 +38,88 @@ function Inicio() {
   );
 }
 function ClientesList() {
-  return (<h2>Página de Clientes
-    <button className="btn btn-primary"><i className="fa fa-plus"></i> Novo Cliente</button>
-  </h2>
+  return (
+    <div>
+      <div>
+        <h2 className="mb-0">Clientes
+          <div className="float-right">
+            <button className="btn btn-dark">
+              <i className="fa fa-plus"></i> Novo Cliente
+            </button>
+            <button className="btn btn-outline-secondary">
+              <i className="fa fa-refresh"></i> Atualizar
+            </button>
+          </div>
+        </h2>
+      </div>
+
+      <div className="table-responsive">
+        <table className="table table-striped table-hover align-middle">
+          <thead className="table-light">
+            <tr>
+              <th>Código</th>
+              <th>Nome</th>
+              <th>Morada</th>
+              <th>NIF</th>
+              <th>Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Julio Pinho</td>
+              <td>Lisboa</td>
+              <td>123456789</td>
+              <td>
+                <button className="btn btn-sm btn-outline-secondary mr-1">
+                  <i className="fa fa-eye"></i>
+                </button>
+                <button className="btn btn-sm btn-outline-primary mr-1">
+                  <i className="fa fa-edit"></i>
+                </button>
+                <button className="btn btn-sm btn-outline-danger">
+                  <i className="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Barros Silva</td>
+              <td>Madeira</td>
+              <td>987654321</td>
+              <td>
+                <button className="btn btn-sm btn-outline-secondary mr-1">
+                  <i className="fa fa-eye"></i>
+                </button>
+                <button className="btn btn-sm btn-outline-primary mr-1">
+                  <i className="fa fa-edit"></i>
+                </button>
+                <button className="btn btn-sm btn-outline-danger">
+                  <i className="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Maria Juahna</td>
+              <td>Leiria</td>
+              <td>456789123</td>
+              <td>
+                <button className="btn btn-sm btn-outline-secondary mr-1">
+                  <i className="fa fa-eye"></i>
+                </button>
+                <button className="btn btn-sm btn-outline-primary mr-1">
+                  <i className="fa fa-edit"></i>
+                </button>
+                <button className="btn btn-sm btn-outline-danger">
+                  <i className="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }
 function VeiculosList() {
