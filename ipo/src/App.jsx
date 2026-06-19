@@ -200,7 +200,7 @@ function VeiculosList() {
 
   const confirmDelete = async (id) => {
     try {
-      const response = await fetch(API_BASE + '/clientes/' + id, { method: 'DELETE' });
+      const response = await fetch(API_BASE + '/veiculos/' + id, { method: 'DELETE' });
       const data = await response.json();
       if (data.success) {
         fetchData();
