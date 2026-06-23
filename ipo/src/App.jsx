@@ -179,30 +179,61 @@ function ClientesList() {
 }
 
 function ClienteForm() {
+  const [mensagemErro, setMensagemErro] = useState(null);
+  const [formData, setFormData] = useState({
+    nome: '',
+    morada: '',
+    nif: ''
+  });
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const method = 'POST';
+      const url = `${API_BASE}/clientes`;
+      const response = await fetch(url, {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        navigate('/clientes');
+      } else {
+        setMensagemErro(data.message);
+      }
+    } catch {
+      setMensagemErro('Erro ao guardar o cliente');
+    }
+  };
+
   return (
     <>
       <h2>Novo Cliente</h2>
-      <form action="/clientes" method="POST">
+      <form onSubmit={handleSubmit}>
 
-        <div className="form-group col-8">
-          <label>Nome:</label>
-          <input className="form-control" />
+        <div className="row">
+          <div className="form-group col-8">
+            <label>Nome:</label>
+            <input className="form-control" value={formData.nome} onChange={(e) => setFormData({ ...formData, nome: e.target.value })}/>
+          </div>
         </div>
 
         <div className="row">
           <div className="form-group col-6">
-            <label>Password:</label>
-            <input className="form-control" />
+            <label>Morada</label>
+            <input className="form-control" value={formData.morada} onChange={(e) => setFormData({ ...formData, morada: e.target.value })}/>
           </div>
 
           <div className="form-group col-6">
             <label>NIF</label>
-            <input className="form-control" />
-          </div>
+            <input className="form-control" value={formData.nif} onChange={(e) => setFormData({ ...formData, nif: e.target.value })}/>
+          </div> 
         </div>
 
         <button type="submit" className="btn btn-dark mr-2">Guardar</button>
-        <button type="submit" className="btn btn-dark mr-2">Cancelar</button>
+        <button type="button" className="btn btn-dark mr-2" onClick={() => navigate('/clientes')}>Cancelar</button>
       </form>
     </>
   );
