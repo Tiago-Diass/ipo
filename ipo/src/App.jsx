@@ -233,7 +233,7 @@ function ClienteForm() {
         </div>
 
         <button type="submit" className="btn btn-dark mr-2">Guardar</button>
-        <button type="button" className="btn btn-dark mr-2" onClick={() => navigate('/clientes')}>Cancelar</button>
+        <button type="button" className="btn btn-secondary mr-2" onClick={() => navigate('/clientes')}>Cancelar</button>
       </form>
     </>
   );
