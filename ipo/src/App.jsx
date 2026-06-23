@@ -181,7 +181,29 @@ function ClientesList() {
 function ClienteForm() {
   return (
     <>
-      <h2>Formulário de Cliente</h2>
+      <h2>Novo Cliente</h2>
+      <form action="/clientes" method="POST">
+
+        <div className="form-group col-8">
+          <label>Nome:</label>
+          <input className="form-control" />
+        </div>
+
+        <div className="row">
+          <div className="form-group col-6">
+            <label>Password:</label>
+            <input className="form-control" />
+          </div>
+
+          <div className="form-group col-6">
+            <label>NIF</label>
+            <input className="form-control" />
+          </div>
+        </div>
+
+        <button type="submit" className="btn btn-dark mr-2">Guardar</button>
+        <button type="submit" className="btn btn-dark mr-2">Cancelar</button>
+      </form>
     </>
   );
 }
