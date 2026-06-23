@@ -21,6 +21,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/clientes" element={<ClientesList />} />
+
+          {/* Rotas do formulário de Clientes */}
+          <Route path="/clientes/create" element={<ClienteForm modo="create" />} />
+          <Route path="/clientes/update/:id" element={<ClienteForm modo="update" />} />
+          <Route path="/clientes/read/:id" element={<ClienteForm modo="read" />} />
+
           <Route path="/veiculos" element={<VeiculosList />} />
           <Route path="/inspecoes" element={<InspecoesList />} />
         </Routes>
@@ -40,6 +46,7 @@ function Inicio() {
     </div>
   );
 }
+
 function ClientesList() {
   const [deleteId, setDeleteId] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -101,7 +108,9 @@ function ClientesList() {
           <h2>Clientes</h2>
         </div>
         <div className="col-6 text-right">
-          <button className="btn btn-dark ml-3" ><i className="fa fa-plus-square" aria-hidden="true"></i> Novo Cliente</button>
+          <Link to="/clientes/create" className="btn btn-dark">
+            <i className="fa fa-plus-square"></i> Novo Cliente
+          </Link>
           <button className="btn btn-light ml-3" onClick={fetchData}><i className="fa fa-refresh" aria-hidden="true"></i> Atualizar</button>
         </div>
       </div>
@@ -169,7 +178,13 @@ function ClientesList() {
   );
 }
 
-
+function ClienteForm() {
+  return (
+    <>
+      <h2>Formulário de Cliente</h2>
+    </>
+  );
+}
 
 
 
