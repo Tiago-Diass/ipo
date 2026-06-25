@@ -224,8 +224,8 @@ function ClienteForm({ modo }) {
       });
       const data = await response.json();
       if (data.success) {
-        if (modo === 'update') {
-          navigate('/clientes');
+        if (modo === '/clientes/update' + id) {
+          navigate('/clientes/update/' + id);
         } else {
           navigate('/clientes');
         }
