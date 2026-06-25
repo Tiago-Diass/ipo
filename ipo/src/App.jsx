@@ -141,7 +141,9 @@ function ClientesList() {
               <td>{cliente.morada}</td>
               <td>{cliente.nif}</td>  
               <td style={{ whiteSpace: 'nowrap' }}>
-                <button className="btn btn-dark btn-sm mr-2" ><i className='fa fa-eye' aria-hidden='true'></i></button>
+                <button className="btn btn-dark btn-sm mr-2" onClick={() => navigate(`/clientes/read/${cliente.codcli}`)}>
+                  <i className='fa fa-eye' aria-hidden='true'></i>
+                </button>
                 <button className="btn btn-dark btn-sm mr-2" onClick={() => navigate(`/clientes/update/${cliente.codcli}`)}> 
                   <i className='fa fa-pencil' aria-hidden='true'></i>
                 </button>
@@ -223,9 +225,9 @@ function ClienteForm({ modo }) {
       const data = await response.json();
       if (data.success) {
         if (modo === 'update') {
-          navigate('/clientes/' + id);
-        } else {
           navigate('/clientes');
+        } else {
+          navigate('/clientes/'  + id);
         }
       } else {
         setMensagemErro(data.message);
@@ -264,7 +266,7 @@ function ClienteForm({ modo }) {
       <div className="row">
         <div className="col-sm-6">
           <div className="form-group">
-            <label>Morada</label>
+            <label htmlFor="morada">Morada</label>
             <input type="text" className="form-control" value={formData.morada} onChange={(e) => setFormData({
               ...formData, morada:
                 e.target.value
@@ -273,7 +275,7 @@ function ClienteForm({ modo }) {
         </div>
         <div className="col-sm-6">
           <div className="form-group">
-            <label>NIF</label>
+            <label htmlFor="nif">NIF</label>
             <input type="text" className="form-control" value={formData.nif} onChange={(e) => setFormData({
               ...formData, nif:
                 e.target.value
