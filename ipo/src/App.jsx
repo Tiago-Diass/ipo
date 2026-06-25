@@ -139,10 +139,12 @@ function ClientesList() {
               <td>{cliente.codcli}</td>
               <td>{cliente.nome}</td>
               <td>{cliente.morada}</td>
-              <td>{cliente.nif}</td>
+              <td>{cliente.nif}</td>  
               <td style={{ whiteSpace: 'nowrap' }}>
                 <button className="btn btn-dark btn-sm mr-2" ><i className='fa fa-eye' aria-hidden='true'></i></button>
-                <button className="btn btn-dark btn-sm mr-2" ><i className='fa fa-pencil' aria-hidden='true'></i></button>
+                <button className="btn btn-dark btn-sm mr-2" onClick={() => navigate(`/clientes/update/${cliente.codcli}`)}> 
+                  <i className='fa fa-pencil' aria-hidden='true'></i>
+                </button>
                 <button className="btn btn-dark btn-sm" onClick={() => openDeleteModal(cliente.codcli)}>
                   <i className='fa fa-trash' aria-hidden='true'></i>
                 </button>
@@ -194,7 +196,7 @@ function ClienteForm({ modo }) {
   const fetchData = async () => {
     try {
       if (id) {
-        const response = await fetch(API_BASE + '/clientes/id' + id);
+        const response = await fetch(API_BASE + '/clientes/' + id);
         const data = await response.json();
         if (data.success) {
           setFormData(data.data);
