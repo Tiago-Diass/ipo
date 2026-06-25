@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Routes, Route, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const API_BASE = 'https://reimagined-tribble-4jjrjj5jrxw7357j6-3000.app.github.dev';
 
@@ -219,7 +220,7 @@ function ClienteForm({ modo }) {
       });
       const data = await response.json();
       if (data.success) {
-        if(modo === 'update') {
+        if (modo === 'update') {
           navigate('/clientes/' + id);
         } else {
           navigate('/clientes');
@@ -250,10 +251,9 @@ function ClienteForm({ modo }) {
       <div className="row">
         <div className="col-sm-8">
           <div className="form-group">
-            <label for="nome">Nome:</label>
+            <label htmlFor="nome">Nome:</label>
             <input type="text" className="form-control" value={formData.nome} onChange={(e) => setFormData({
               ...formData, nome:
-
                 e.target.value
             })} required readOnly={modo === 'read'} />
           </div>
@@ -274,7 +274,6 @@ function ClienteForm({ modo }) {
             <label>NIF</label>
             <input type="text" className="form-control" value={formData.nif} onChange={(e) => setFormData({
               ...formData, nif:
-
                 e.target.value
             })} required readOnly={modo === 'read'} />
           </div>
